@@ -1,5 +1,6 @@
 // Array (rock, paper, scissors)
 const CHOICE = ['rock', 'paper', 'scissors'];
+const WINNING_COMBOS = ['rock-scissors', 'paper-rock', 'scissors-paper'];
 
 // FUNCTION Get Computer Choice
 function getComputerChoice() {
@@ -14,36 +15,39 @@ function playRound(playerSelection, computerSelection) {
     let ps = playerSelection.toLowerCase();
     let cs = computerSelection.toLowerCase();
 
-    if (ps === cs) {
-        return `It's a tie! You've both picked '${ps}'`;
-    }
-
-    if (ps === 'rock' && cs === 'scissors') {
-        return 'You Win! Rock beats Scissors';
-    }
-
-    if (ps === 'paper' && cs === 'rock') {
-        return 'You Win! Paper beats Rock';
-    }
-
-    if (ps === 'scissors' && cs === 'paper') {
-        return 'You Win! Scissors beats Paper';
-    }
-
-    if (ps === 'rock' && cs === 'paper') {
-        return 'You Lose! Paper beats Rock';
-    }
-
-    if (ps === 'paper' && cs === 'scissors') {
-        return 'You Lose! Scissors beats Paper';
-    }
-
-    if (ps === 'scissors' && cs === 'rock') {
-        return 'You Lose! Rock beats Scissors';
-    }
+    // Tie game
+    if (ps === cs) return;
+    
+    // Checks whether player has a winning combo
+    return WINNING_COMBOS.filter(x => x === `${ps}-${cs}`).length === 1 ? true : false;
 }
 
-const playerSelection = 'rock';
-const computerSelection = getComputerChoice();
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
 
-console.log(playRound(playerSelection, computerSelection));
+    for(let i = 0; i < 5; i++) {
+        let playerSelection = prompt();
+        let computerSelection = getComputerChoice();
+        
+        let roundOutcome = playRound(playerSelection, computerSelection);
+        
+        switch (roundOutcome) {
+            case true:
+                playerScore++;
+                console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+                break;
+            case false:
+                computerScore++;
+                console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
+                break;
+            default:
+                console.log("It's a tie!");
+                break;
+        }
+    }
+
+    console.log(`Player Score: ${playerScore} | Computer Score: ${computerScore}`);
+}
+
+game();
