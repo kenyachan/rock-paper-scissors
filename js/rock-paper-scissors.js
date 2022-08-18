@@ -8,7 +8,6 @@ function getComputerChoice() {
     
     // 	Generate a random number between 0 and 2 and save it to randomNumber
     randomNumber = Math.floor(Math.random() * 3);
-    console.log(randomNumber);
 
     // 	return array item corresponding to random number
     return CHOICE[randomNumber];
