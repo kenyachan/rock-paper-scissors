@@ -1,8 +1,15 @@
 // Array (rock, paper, scissors)
+const CHOICE = ['rock', 'paper', 'scissors'];
+
 // FUNCTION Get Computer Choice
-// 	Initialise a variable called choice
-// 	Initialise a variable called randomNumber
-// 	Generate a random number between 1 and 3 and save it to randomNumber
-// 	return array item corresponding to random number
-// END FUNCTION
-//
+function getComputerChoice() {
+    // 	Initialise a variable called randomNumber
+    let randomNumber;
+    
+    // 	Generate a random number between 0 and 2 and save it to randomNumber
+    randomNumber = Math.floor(Math.random() * 3);
+    console.log(randomNumber);
+
+    // 	return array item corresponding to random number
+    return CHOICE[randomNumber];
+}
