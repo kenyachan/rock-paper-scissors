@@ -4,7 +4,6 @@ const WIN = 'win';
 const LOSE = 'lose';
 const TIE = 'tie;'
 
-
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
     
@@ -17,7 +16,7 @@ function playRound(playerSelection, computerSelection) {
 
     if (ps === cs) return TIE;
     
-    return WINNING_COMBOS.filter(x => x === `${ps}-${cs}`).length === 1 ? WIN : LOSE;
+    return WINNING_COMBOS.includes(`${ps}-${cs}`) ? WIN : LOSE;
 }
 
 function game() {
