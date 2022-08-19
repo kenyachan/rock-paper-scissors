@@ -1,13 +1,13 @@
-// Array (rock, paper, scissors)
 const CHOICE = ['rock', 'paper', 'scissors'];
 const WINNING_COMBOS = ['rock-scissors', 'paper-rock', 'scissors-paper'];
+const WIN = 'win';
+const LOSE = 'lose';
+const TIE = 'tie;'
 
-// FUNCTION Get Computer Choice
+
 function getComputerChoice() {
-    // 	Generate a random number between 0 and 2 and save it to a variable called randomNumber
     let randomNumber = Math.floor(Math.random() * 3);
-
-    // 	return array item corresponding to random number
+    
     return CHOICE[randomNumber];
 }
 
@@ -15,11 +15,9 @@ function playRound(playerSelection, computerSelection) {
     let ps = playerSelection.toLowerCase();
     let cs = computerSelection.toLowerCase();
 
-    // Tie game
-    if (ps === cs) return;
+    if (ps === cs) return TIE;
     
-    // Checks whether player has a winning combo
-    return WINNING_COMBOS.filter(x => x === `${ps}-${cs}`).length === 1 ? true : false;
+    return WINNING_COMBOS.filter(x => x === `${ps}-${cs}`).length === 1 ? WIN : LOSE;
 }
 
 function game() {
@@ -33,11 +31,11 @@ function game() {
         let roundOutcome = playRound(playerSelection, computerSelection);
         
         switch (roundOutcome) {
-            case true:
+            case WIN:
                 playerScore++;
                 console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
                 break;
-            case false:
+            case LOSE:
                 computerScore++;
                 console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
                 break;
