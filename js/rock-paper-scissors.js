@@ -10,6 +10,16 @@ function getComputerChoice() {
     return CHOICE[randomNumber];
 }
 
+function getPlayerChoice() {
+    let playerSelection;
+
+    while (!CHOICE.includes(playerSelection)){
+        playerSelection = prompt("Type 'rock', 'paper', or 'scissors'.");
+    }
+
+    return playerSelection;
+}
+
 function playRound(playerSelection, computerSelection) {
     let ps = playerSelection.toLowerCase();
     let cs = computerSelection.toLowerCase();
@@ -24,7 +34,7 @@ function game() {
     let computerScore = 0;
 
     for(let i = 0; i < 5; i++) {
-        let playerSelection = prompt();
+        let playerSelection = getPlayerChoice();
         let computerSelection = getComputerChoice();
         
         let roundOutcome = playRound(playerSelection, computerSelection);
