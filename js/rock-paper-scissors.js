@@ -13,18 +13,18 @@ document.querySelectorAll('.playerChoice').forEach(btn => {
     btn.addEventListener('click', playRound);
 });
 
-let tryAgainButton = createTryAgainButton();
+let playAgainButton = createPlayAgainButton();
 
 startGame();
 
-function createTryAgainButton() {
-    let tryAgainBtn = document.createElement('button');
+function createPlayAgainButton() {
+    let playAgainBtn = document.createElement('button');
     
-    tryAgainBtn.classList.add('btn');
-    tryAgainBtn.textContent = "Try again";
-    tryAgainBtn.addEventListener('click', resetGame);
+    playAgainBtn.classList.add('btn');
+    playAgainBtn.textContent = "Play again";
+    playAgainBtn.addEventListener('click', resetGame);
 
-    return tryAgainBtn;
+    return playAgainBtn;
 }
 
 function startGame() {
@@ -35,7 +35,7 @@ function startGame() {
 }
 
 function resetGame() {
-    document.querySelector('body').removeChild(tryAgainButton);
+    document.querySelector('body').removeChild(playAgainButton);
     
     enableGameButtons();
     startGame();
@@ -72,7 +72,7 @@ function gameOver() {
 
     disableGameButtons();
 
-    document.querySelector('body').appendChild(tryAgainButton);
+    document.querySelector('body').appendChild(playAgainButton);
 }
 
 function tieRound() {
