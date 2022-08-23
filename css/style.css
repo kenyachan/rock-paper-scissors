@@ -38,3 +38,10 @@ footer a .fa-github {
 footer a {
     color: #e5e7eb;
 }
+
+header {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 4rem ;
+}
