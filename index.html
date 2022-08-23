@@ -15,18 +15,20 @@
         <h1>Rock, Paper, Scissors</h1>
     </header>
     <main>
-        <button id="rock" class="playerChoice btn">Rock</button>
-        <button id="paper" class="playerChoice btn">Paper</button>
-        <button id="scissors" class="playerChoice btn">Scissors</button>
-        <div id="outcomeText"></div>
+        <div id="rps-button-container">
+            <button id="rock" class="playerChoice btn">Rock</button>
+            <button id="paper" class="playerChoice btn">Paper</button>
+            <button id="scissors" class="playerChoice btn">Scissors</button>
+        </div>
+        <div id="outcomeText" class="promptingText"></div>
         <div id="scoreBoard">
-            <div id="playerScoreBoard">
+            <div id="playerScoreBoard" class="playerScoreBoard">
                 <div class="label">Player Score</div>
-                <div id="playerScore">0</div>
+                <div id="playerScore" class="score">0</div>
             </div>
-            <div id="computerScoreBoard">
+            <div id="computerScoreBoard" class="playerScoreBoard">
                 <div class="label">Computer Score</div>
-                <div id="computerScore">0</div>
+                <div id="computerScore" class="score">0</div>
             </div>
         </div>
     </main>
