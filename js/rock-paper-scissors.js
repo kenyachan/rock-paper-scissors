@@ -1,4 +1,4 @@
-const CHOICE = ['rock', 'paper', 'scissors'];
+const CHOICES = ['rock', 'paper', 'scissors'];
 const WINNING_COMBOS = ['rock-scissors', 'paper-rock', 'scissors-paper'];
 const WIN = 'win';
 const LOSE = 'lose';
@@ -43,7 +43,7 @@ function resetGame() {
 
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
-    return CHOICE[randomNumber];
+    return CHOICES[randomNumber];
 }
 
 function playRound(playerChoice) {
