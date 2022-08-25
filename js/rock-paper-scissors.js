@@ -47,7 +47,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice) {
-    let ps = playerChoice.target.id;
+    let ps = playerChoice.target.id; /* button id */
     let cs = getComputerChoice();
     let roundOutcome = ps === cs ? TIE : 
         WINNING_COMBOS.includes(`${ps}-${cs}`) ? WIN : LOSE;
