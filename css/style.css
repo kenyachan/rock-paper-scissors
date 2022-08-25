@@ -94,3 +94,7 @@ header {
 .score {
     font-size: 5rem;
 }
+
+#playAgainPlaceHolder {
+    height: 3rem;
+}

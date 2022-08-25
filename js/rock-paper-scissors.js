@@ -35,7 +35,7 @@ function startGame() {
 }
 
 function resetGame() {
-    document.querySelector('main').removeChild(playAgainButton);
+    document.querySelector('#playAgainPlaceHolder').removeChild(playAgainButton);
     
     enableGameButtons();
     startGame();
@@ -72,7 +72,7 @@ function gameOver() {
 
     disableGameButtons();
 
-    document.querySelector('main').appendChild(playAgainButton);
+    document.querySelector('#playAgainPlaceHolder').appendChild(playAgainButton);
 }
 
 function tieRound() {
