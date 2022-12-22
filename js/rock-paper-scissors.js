@@ -36,6 +36,7 @@ function startGame() {
 
 function resetGame() {
     document.querySelector('#playAgainPlaceHolder').removeChild(playAgainButton);
+	document.querySelector('#outcomeText').textContent = '';
     
     enableGameButtons();
     startGame();
